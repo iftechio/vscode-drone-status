@@ -1,0 +1,62 @@
+{
+	"name": "vscode-drone-status",
+	"displayName": "Drone Build Status",
+	"description": "View your project's Drone status inside Visual Studio Code",
+	"version": "0.0.1",
+	"publisher": "cosformula",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/iftechio/vscode-drone-status"
+	},
+	"icon": "media/drone-logo-png-dark-128.png",
+	"bugs": {
+		"url": "https://github.com/iftechio/vscode-drone-status/issues"
+	},
+	"homepage": "https://github.com/iftechio/vscode-drone-status/blob/master/README.md",
+	"contributes": {
+		"commands": [
+			{
+				"command": "drone.openInDrone",
+				"title": "Drone: Open in Drone"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Drone Status Configuration",
+			"properties": {
+				"drone.accessToken": {
+					"type": "string",
+					"default": "",
+					"description": "Personal token for authentication, you can retrieve your user token from your user profile screen (/account/token) in the Drone user interface."
+				}
+			}
+		}
+	},
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"vscode:package": "vsce package",
+		"compile": "tsc -p ./",
+		"lint": "tslint -p ./",
+		"watch": "tsc --enable-proposed-api -watch -p ./ "
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.32.0",
+		"typescript": "^3.5.1"
+	},
+	"dependencies": {
+		"@types/eventsource": "^1.1.2",
+		"@types/node": "^12.7.2",
+		"axios": "^0.19.0",
+		"eventsource": "^1.0.7"
+	}
+}
