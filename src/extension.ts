@@ -143,7 +143,8 @@ function notityUser() {
   const status = build.status
   const buildNumber = build.number
   if (status === 'running') {
-    vscode.window.showInformationMessage(`Drone: Running (#${buildNumber})`)
+    // TODO: show progress bar instead of `showInformationMessage`
+    // vscode.window.showInformationMessage(`Drone: Running (#${buildNumber})`)
   } else if (status === 'success') {
     vscode.window.showInformationMessage(`Drone: Build succeeded (#${buildNumber})`)
   } else if (status === 'failed') {
