@@ -17,12 +17,12 @@ let es: EventSource
 const droneConfigurationFileName = '.drone.status'
 export function activate(context: vscode.ExtensionContext) {
   const { subscriptions } = context
-  let hasDroneInRoot = false
+  // let hasDroneInRoot = false
   // register a command that is invoked when the status bar
   // item is selected
   const commandId = 'drone.openInDrone'
   subscriptions.push(vscode.commands.registerCommand(commandId,() => {
-    if (!hasDroneInRoot) {
+    if (!hasDroneInAnyRoot()) {
       vscode.window.showWarningMessage("The project is not enabled for Drone. Missing .drone.status file.")
       return
     }

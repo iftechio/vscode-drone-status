@@ -2,7 +2,7 @@
 	"name": "vscode-drone-status",
 	"displayName": "Drone Build Status",
 	"description": "View your project's Drone status inside Visual Studio Code",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "cosformula",
 	"repository": {
 		"type": "git",
